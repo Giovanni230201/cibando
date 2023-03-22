@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'cibando';
+
+  images=[
+    {id:1,
+    label:'Spahetti al pomodoro'},
+   {id:2,
+      label:'Tagliata di manzo'},
+      {id:3,
+        label:'Tiramisù'}
+  ];
+
+  colore='green';
+  percorso="../assets/images/carousel-";
 }
