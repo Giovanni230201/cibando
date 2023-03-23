@@ -7,17 +7,21 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MaterialExampleModule } from 'src/material.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
+import { CarouselComponent } from './components/carousel/carousel.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialExampleModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

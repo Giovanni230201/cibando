@@ -9,15 +9,11 @@ import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 export class AppComponent {
   title = 'cibando';
 
-  images=[
-    {id:1,
-    label:'Spahetti al pomodoro'},
-   {id:2,
-      label:'Tagliata di manzo'},
-      {id:3,
-        label:'Tiramisù'}
-  ];
+  evidenziato=false;
 
-  colore='green';
-  percorso="../assets/images/carousel-";
+
+  onEvidenzazione(){
+    this.evidenziato= !this.evidenziato;
+  }
+  //colore='green';
 }
