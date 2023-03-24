@@ -1,46 +1,4 @@
-<header>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-dark bg-red">
-  <div class="container-fluid">
-    <img src= "../assets/images/icona-cibando.png" class="icona-cibando">
-    <a class="navbar-brand" href="#">Cibando</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <mat-icon class="align-self-center">home</mat-icon>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">  Home</a>
-        </li>
-        <mat-icon class="align-self-center">restaurant_menu</mat-icon>
-        <li class="nav-item">
-          <a class="nav-link" href="#"> Ricette</a>
-        </li>
-        <mat-icon class="align-self-center">contacts</mat-icon>
-        <li class="nav-item">
-          <a class="nav-link" href="#"> Contatti</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-</header>
-
-<app-carousel></app-carousel>
-
-<div id="main-container">
-
-  <div class="container-titolo">
-    <h2 [ngClass]="evidenziato ? 'testoEvidenziato' : '' " (click)="onEvidenzazione()" style="cursor:pointer">Benvenuti in Cibando</h2>
-    <p class="paragrafo" [ngStyle]="{'background-color' : evidenziato ===true ?'yellow' : 'white'}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat sapiente esse sed, saepe culpa quisquam blanditiis illum ducimus amet accusantium alias excepturi accusamus praesentium sint, mollitia pariatur reprehenderit nostrum voluptas maiores voluptatem corporis suscipit? Ex illum ad magni veritatis repellat est doloribus facere cumque labore consequatur aperiam fuga, molestias minus cum? Repellat, quos nostrum? Maiores at nihil eos dolore iusto aliquid. Sequi facilis culpa quibusdam iure assumenda expedita ipsam rerum eius ullam quidem laudantium animi aspernatur, saepe, molestias voluptas necessitatibus? Nemo, natus ullam. Aliquid, veniam consectetur. Cumque accusamus ipsum ratione eius debitis dolore, quidem iste! Est cupiditate accusantium nemo, rem adipisci, ex nostrum a tenetur perferendis perspiciatis praesentium animi? Eos voluptate id, quos similique iure quaerat. Velit, minus cumque distinctio quia eum consectetur odio sed nam repudiandae ea doloribus unde esse voluptates, error quis labore fugit voluptate quaerat deserunt et dignissimos nulla provident! Nesciunt eveniet beatae saepe fugiat commodi incidunt soluta placeat nemo, nostrum rem quae libero dolorem pariatur nobis. Delectus, iste cumque. Ea doloribus deserunt possimus dolorum pariatur aspernatur. Fugit cumque rem est nisi, minima sit, earum quod ipsam doloremque neque quis error laborum eaque labore molestiae excepturi quisquam voluptate explicabo modi sapiente impedit numquam ea. Repellendus iste neque ab cupiditate inventore error dolore maxime quibusdam perspiciatis tenetur unde nobis deleniti aliquid expedita perferendis, placeat optio dignissimos eius autem esse vitae odit fugiat quis. Aperiam, tempore laborum? Ullam, cupiditate eveniet dolore asperiores perspiciatis laudantium rerum nam cum? Dolore, minus ducimus perspiciatis sequi, iusto vero culpa temporibus minima beatae explicabo maxime dignissimos, eius illum ipsa? Tenetur blanditiis aliquid, numquam est reiciendis temporibus molestiae ea, laudantium voluptatum odio ex soluta commodi fugit? Animi deleniti ad, nobis ut distinctio eligendi veritatis? Optio nam aliquid nihil veniam adipisci eum veritatis aliquam provident sint tenetur nostrum fugiat, officiis quam cupiditate non qui ut doloribus sed, necessitatibus dolor magni repellat autem harum quasi. Aliquid, reiciendis. Aperiam mollitia neque necessitatibus porro. In veritatis magni itaque nemo laudantium rem nihil praesentium tenetur inventore molestiae cupiditate a quo quis voluptas officia harum, perspiciatis laborum beatae? Consequatur nihil asperiores corporis aut iste perspiciatis deserunt placeat enim, id quisquam natus praesentium unde neque necessitatibus inventore omnis ratione fugit libero dicta iusto. Laborum ipsa dicta optio illo voluptatibus saepe repellat autem cumque quasi nesciunt quis modi corporis error officiis fugiat officia molestiae illum, laboriosam doloremque sit beatae cum perspiciatis dolorum totam! Soluta aspernatur, quo fuga cupiditate error voluptatem nostrum quisquam qui.</p>
-  </div>
-</div>
-
-<!-- <div id="contenitore-switch" [ngSwitch]="colore">
-  <div *ngSwitchCase="'green' " style="background: +colore"> compare se il colore é VERDE </div>
-  <div *ngSwitchCase="'blue'" style="background: +colore">compare se il colore é BLU </div>
-  <div *ngSwitchCase="'red'" style="background: +colore">compare se il colore é ROSSO</div>
-  <div *ngSwitchDefault>compare se il colore non é stato scelto</div>
-</div> -->
-
+<app-header></app-header>
+<app-home></app-home>
+<app-footer></app-footer>
 <router-outlet></router-outlet>

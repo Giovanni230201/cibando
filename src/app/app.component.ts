@@ -8,12 +8,4 @@ import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 })
 export class AppComponent {
   title = 'cibando';
-
-  evidenziato=false;
-
-
-  onEvidenzazione(){
-    this.evidenziato= !this.evidenziato;
-  }
-  //colore='green';
 }

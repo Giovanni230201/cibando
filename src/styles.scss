@@ -1,13 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../node_modules/bootstrap/dist/css/bootstrap.css";
 // oppure @import "~bootstrap/dist/css/bootstrap.css";
+@import "~bootstrap-icons/font/bootstrap-icons.css";
 
 body{
   margin: 0;
   font-family: 'Montserrat', sans-serif;
 }
 
-.bg-red,header{
+.bg-red,header,footer{
   background-color: #8e210b!important;
 }
 
