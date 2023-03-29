@@ -1,0 +1,18 @@
+<div *ngIf="ricetta, else ricetta_non_trovata">
+ <img background [src]="ricetta.image" width="100%">
+  <div class="container-detail">
+   <h2 class="title">{{ricetta.title}}</h2>
+   <p class="description">{{ricetta.description}}</p>
+   <h2 class="date">{{ricetta.date}}</h2>
+      <div class="row">
+      <strong>Difficoltà: </strong>
+      <img [src]="percosoStelline + ricetta.difficulty + '.png' " alt="" class="difficolta">
+      </div>
+  </div>
+</div>
+
+<ng-template #ricetta_non_trovata>
+  <div id="ricetta_non_trovata">
+    <h2>Spiacenti ma la ricetta non é piú disponibile</h2>
+  </div>
+</ng-template>

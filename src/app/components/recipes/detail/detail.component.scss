@@ -1,0 +1,26 @@
+.title{
+  font-size: xx-large;
+}
+.description{
+  font-size: small !important;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
+  color: black !important;
+}
+.difficolta{
+  width: 150px;
+  margin-right: 10px;
+}
+
+.date{
+  text-align: end;
+  font-size:medium !important;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
+  color: black !important;
+}
+
+#ricetta_non_trovata{
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
