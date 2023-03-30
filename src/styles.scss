@@ -44,5 +44,11 @@ h2{
   width: 400px;
 }
 
+.btn-primary{
+  background-color: #8e210b !important;
+  font-weight: 700;
+  border: none !important;
+}
+
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';

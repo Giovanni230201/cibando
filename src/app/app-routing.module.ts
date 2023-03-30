@@ -1,3 +1,4 @@
+import { SignInComponent } from './components/user/sign-in/sign-in.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -13,6 +14,7 @@ const routes: Routes = [
     {path:'dettaglio/:title/:_id', component: DetailComponent},
     {path:'', pathMatch: 'full', component:RecipesListComponent}
   ] },
+  {path:'sign-in', component:SignInComponent},
   {path:'**',redirectTo: 'home'}
 ];
 

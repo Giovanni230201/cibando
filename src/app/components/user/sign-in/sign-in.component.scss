@@ -1,0 +1,64 @@
+// .button{
+//   background-color: #8e210b;
+// }
+
+// p.help.is-danger{
+//   margin-top: 13px;
+//   color: rgb(191, 27, 27);
+//   font-size: 12px;
+//   font-weight: 600;
+// }
+
+
+
+// .check{
+//   height: 50px;
+//   width: 70%;
+//   flex-direction: column;
+//   margin-top: 4px;
+// }
+
+
+input.ng-invalid.ng-touched{
+  border: 1px solid red;
+}
+
+input.ng-valid.ng-touched{
+  border: 1px solid rgb(7, 216, 7);
+}
+
+.colonna-dx{
+  background-image: url("../../../../assets/images/cibandoFotoRegistrati1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius:  0px 25px 25px 0px;
+}
+.p-md-5 {
+  padding: 1rem !important;
+}
+
+.btn{
+  background-color: #8e210b !important;
+  border: none !important;
+}
+
+p.help.is-danger{
+  margin-top: 10px;
+  color: red;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.check{
+  height: 50px;
+  width: 70%;
+  flex-direction: column;
+  margin-top: 4px;
+}
+
+.icone{
+  text-align: center;
+  font-size: 25px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
