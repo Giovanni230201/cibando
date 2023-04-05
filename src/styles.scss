@@ -50,5 +50,11 @@ h2{
   border: none !important;
 }
 
+.p-password, .p-inputtext{
+  width: 100%!important;
+  border: none!important;
+  height: 20px !important;
+}
+
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
