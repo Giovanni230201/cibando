@@ -1,0 +1,53 @@
+<!-- <div>
+  PRIMO GRUPPO
+  {{primoGruppo$ |async | json}}
+<br><br><br>
+  SECONDO GRUPPO
+  {{secondoGruppo$ |async | json}}
+  <br><br><br>
+  TERZO GRUPPO
+  {{terzoGruppo$ |async | json}}
+  <br><br><br>
+</div> -->
+
+
+
+
+
+<ng-template #caricato [ngIf]="gruppiCombinati$ | async" [ngIfElse]="loading">
+  <div class="container">
+  <div>
+  <h3>Clienti</h3>
+  <ul>
+    <li *ngFor="let cliente of gruppi[0]">
+      {{ cliente.name || cliente}}
+    </li>
+  </ul>
+</div>
+
+<div>
+  <h3>Rivenditori</h3>
+  <ul>
+    <li *ngFor="let rivenditori of gruppi[1]">
+       {{ rivenditori.name || rivenditori}}
+    </li>
+  </ul>
+</div>
+
+<div>
+  <h3>Marche</h3>
+  <ul>
+    <li *ngFor="let marche of gruppi[2]">
+       {{ marche.name || marche}}
+    </li>
+  </ul>
+</div>
+</div>
+</ng-template>
+
+<ng-template #loading>
+  <div class="spinner">
+  <img src="../../../assets/images/spinner.gif">
+  </div>
+</ng-template>
+

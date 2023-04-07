@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +21,9 @@ import { RecipeCardComponent } from './shared/recipe-card/recipe-card.component'
 import { DetailComponent } from './components/recipes/detail/detail.component';
 import { RecipesListComponent } from './components/recipes/recipes-list/recipes-list.component';
 import { SignInComponent } from './components/user/sign-in/sign-in.component';
+import { NewRecipeComponent } from './components/new-recipe/new-recipe.component';
+import { ChangeColorDirective } from './directives/change-color.directive';
+import { EsempioCombineComponent } from './components/esempio-combine/esempio-combine.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +36,10 @@ import { SignInComponent } from './components/user/sign-in/sign-in.component';
     RecipeCardComponent,
     DetailComponent,
     RecipesListComponent,
-    SignInComponent
+    SignInComponent,
+    NewRecipeComponent,
+    ChangeColorDirective,
+    EsempioCombineComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +51,8 @@ import { SignInComponent } from './components/user/sign-in/sign-in.component';
     ReactiveFormsModule,
     PasswordModule,
     DividerModule,
-    PaginatorModule
+    PaginatorModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

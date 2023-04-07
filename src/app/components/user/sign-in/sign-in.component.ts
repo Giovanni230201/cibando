@@ -5,12 +5,16 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
  import { PrimeNGConfig } from 'primeng/api';
  import { UserService } from 'src/app/services/user.service';
  import { Router } from '@angular/router';
+import { take } from 'rxjs';
+
 @Component({
   selector: 'app-sign-in',
   templateUrl: './sign-in.component.html',
   styleUrls: ['./sign-in.component.scss']
 })
 export class SignInComponent implements OnInit {
+
+  utenteInserito: any;
 
   constructor(
     private modalService: NgbModal,
@@ -40,17 +44,22 @@ export class SignInComponent implements OnInit {
   );
 
 
+
   onSubmit(){
-    //console.log(this.form.value);
-    const user ={
-       name: this.form.value.name,
-       email: this.form.value.email
-      }
+      const user = this.form.value;
+      this.userService.insertUser(user).pipe(take(1)).subscribe({
+        next: (res) => {
+          console.log(res);
+          this.utenteInserito = res;
+        },
+        error: (err) => {
+          console.log(err);
+        }
+      });
 
       this.userService.datiUtente.next(user);
-
-      this.router.navigate(['home']);
-  }
+      this.router.navigate(['home'])
+    }
 
 
 

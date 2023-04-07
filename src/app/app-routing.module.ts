@@ -6,6 +6,8 @@ import { HomeComponent } from './components/home/home.component';
 import { RecipesComponent } from './components/recipes/recipes.component';
 import { RecipesListComponent } from './components/recipes/recipes-list/recipes-list.component';
 import { DetailComponent } from './components/recipes/detail/detail.component';
+import { NewRecipeComponent } from './components/new-recipe/new-recipe.component';
+import { EsempioCombineComponent } from './components/esempio-combine/esempio-combine.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'home',pathMatch:'full'},
@@ -15,6 +17,8 @@ const routes: Routes = [
     {path:'', pathMatch: 'full', component:RecipesListComponent}
   ] },
   {path:'sign-in', component:SignInComponent},
+  {path:'new-recipe', component:NewRecipeComponent},
+  {path:'combine', component: EsempioCombineComponent},
   {path:'**',redirectTo: 'home'}
 ];
 
