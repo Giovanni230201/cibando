@@ -2,11 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Recipe } from 'src/app/models/recipe.model';
 import { RecipeService } from 'src/app/services/recipe.service';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
-  styleUrls: ['./detail.component.scss']
+  styleUrls: ['./detail.component.scss'],
+  providers: [MessageService]
 })
 export class DetailComponent implements OnInit{
 
@@ -16,7 +18,8 @@ export class DetailComponent implements OnInit{
   constructor(
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    private recipeService: RecipeService
+    private recipeService: RecipeService,
+    private messageService: MessageService
   ){}
 
   ngOnInit(): void {
@@ -30,9 +33,12 @@ export class DetailComponent implements OnInit{
     this.recipeService.getRecipe(id).subscribe({
       next: (res) => {
         this.ricetta = res;
+        this.messageService.add({severity: 'succcess', summary: '', detail: 'Ecco i dati della ricetta ricercata', life: 3000})
       },
       error: (err) => {
         console.log(err);
+        this.messageService.add({severity: 'error', summary: 'Errore!', detail: 'La ricetta non è stata trovata o non esiste', life: 3000})
+
       }
     })
   }

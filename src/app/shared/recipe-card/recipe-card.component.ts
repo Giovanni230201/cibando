@@ -2,13 +2,17 @@ import { Component, EventEmitter, Input, OnInit, Output, OnDestroy} from '@angul
 import { Observable, take, map } from 'rxjs';
 import { Recipe } from 'src/app/models/recipe.model';
 import { RecipeService } from 'src/app/services/recipe.service';
+import { UserService } from 'src/app/services/user.service';
+import { MessageService } from 'primeng/api';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-recipe-card',
   templateUrl: './recipe-card.component.html',
-  styleUrls: ['./recipe-card.component.scss']
+  styleUrls: ['./recipe-card.component.scss'],
+  providers: [MessageService]
 })
-export class RecipeCardComponent implements OnDestroy {
+export class RecipeCardComponent implements OnInit, OnDestroy {
 
 
   @Input() pag: string;
@@ -21,22 +25,43 @@ export class RecipeCardComponent implements OnDestroy {
   page=1;
   ricettePerPagina=4;
   ricette: Recipe[];
+  ruolo: any;
+  loading=true;
 
-  // recipes$: Observable<Recipe[]> = this.recipeService.getRecipes().pipe(
-  //   map(response => response.filter(ricetteFiltrate => ricetteFiltrate.difficulty < 3)),
-  //   map(res => this.ricette = res),
-  // );
+  recipes$ = this.recipeService.getRecipes().pipe(
+  //  map(response => response.filter(ricetteFiltrate => ricetteFiltrate.difficulty < 3)),
+    map(res => {
+      this.ricette = res;
+      if(res){
+        this.messageService.add({severity:'success', summary:'', detail:'Ricetta caricata correttamente'})
+      }
+    }),
+  );
 
 
-  recipess$ = this.recipeService.getRecipes();
+  //recipess$ = this.recipeService.getRecipes();
 
 
 
-  constructor (private recipeService: RecipeService){}
+  constructor (
+    private recipeService: RecipeService,
+    private userService: UserService,
+    private messageService: MessageService,
+    private router: Router
+    ){}
 
-//   ngOnInit(): void {
-//     this.prendiRicette();
-// }
+  ngOnInit(): void {
+    if(JSON.parse(localStorage.getItem('user')) != null) {
+      this.userService.userRole.subscribe({
+        next: (res) => {
+          this.ruolo = res;
+        },
+        error: (err) => {
+          console.log(err);
+        }
+      })
+    }
+}
 
 ngOnDestroy(): void {
   console.log("utente uscito dal componente")

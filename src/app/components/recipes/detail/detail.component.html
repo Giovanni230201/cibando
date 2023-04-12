@@ -2,7 +2,8 @@
  <img background [src]="ricetta.image" width="100%">
   <div class="container-detail">
    <h2 class="title">{{ricetta.title}}</h2>
-   <p class="description">{{ricetta.description}}</p>
+   <!-- <p class="description">{{ricetta.description}}</p> -->
+   <span [innerHTML]="ricetta.description"></span>
    <h2 class="date">{{ricetta.date}}</h2>
       <div class="row">
       <strong>Difficoltà: </strong>
@@ -10,9 +11,12 @@
       </div>
   </div>
 </div>
+<!-- <p-toast position="bottom-right"></p-toast> -->
 
 <ng-template #ricetta_non_trovata>
   <div id="ricetta_non_trovata">
     <h2>Spiacenti ma la ricetta non é piú disponibile</h2>
   </div>
 </ng-template>
+
+

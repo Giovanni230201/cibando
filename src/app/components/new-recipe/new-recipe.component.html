@@ -18,8 +18,8 @@
 
                   <div class="d-flex flex-row align-items-center mb-4">
                     <div class="form-outline flex-fill mb-0">
-                      <label class="form-label" for="description">Descrizione</label>
-                      <textarea cols="30" rows="10" name="description" class="form-control" placeholder="Descrizione" formControlName="description"></textarea>
+                      <label  for="description">Descrizione</label>
+                      <ckeditor [editor]="Editor" [config]="editorConfig" class="descrizioneRicetta" placeholder="Descrizione" formControlName="description"></ckeditor>
                     </div>
                   </div>
 
@@ -62,6 +62,8 @@
     </div>
   </section>
 </div>
+
+<p-toast position="bottom-right"></p-toast>
 
 <ng-template #modaleRicetta let-modal>
   <div class="modal-header">

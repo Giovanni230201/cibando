@@ -56,5 +56,17 @@ h2{
   height: 20px !important;
 }
 
+.descrizioneRicetta .ck-editor__editable{
+  min-height: 200px !important;
+  max-height: 200px !important;
+  max-width: 440px !important;
+}
+
+.noteRegistrazione .ck-editor__editable{
+  min-height: 100px !important;
+  max-height: 100px !important;
+  max-width: 440px !important;
+}
+
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';

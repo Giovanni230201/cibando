@@ -8,10 +8,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PasswordModule } from 'primeng/password';
 import {DividerModule} from 'primeng/divider';
 import { PaginatorModule } from 'primeng/paginator';
-
 import { MaterialExampleModule } from 'src/material.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ToastModule } from 'primeng/toast';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { RecipesComponent } from './components/recipes/recipes.component';
 import { HomeComponent } from './components/home/home.component';
@@ -24,7 +26,8 @@ import { SignInComponent } from './components/user/sign-in/sign-in.component';
 import { NewRecipeComponent } from './components/new-recipe/new-recipe.component';
 import { ChangeColorDirective } from './directives/change-color.directive';
 import { EsempioCombineComponent } from './components/esempio-combine/esempio-combine.component';
-
+import { LoginComponent } from './components/user/login/login.component';
+import { ProfileComponent } from './components/user/profile/profile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +42,9 @@ import { EsempioCombineComponent } from './components/esempio-combine/esempio-co
     SignInComponent,
     NewRecipeComponent,
     ChangeColorDirective,
-    EsempioCombineComponent
+    EsempioCombineComponent,
+    LoginComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +57,9 @@ import { EsempioCombineComponent } from './components/esempio-combine/esempio-co
     PasswordModule,
     DividerModule,
     PaginatorModule,
-    HttpClientModule
+    HttpClientModule,
+    ToastModule,
+    CKEditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
