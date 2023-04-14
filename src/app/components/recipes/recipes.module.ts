@@ -13,6 +13,7 @@ import { RecipesComponent } from "./recipes.component";
 import { DetailComponent } from "./detail/detail.component";
 import { RecipesListComponent } from "./recipes-list/recipes-list.component";
 import { NewRecipeComponent } from "../new-recipe/new-recipe.component";
+import { ResultComponent } from './result/result.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { NewRecipeComponent } from "../new-recipe/new-recipe.component";
     DetailComponent,
     RecipesListComponent,
     NewRecipeComponent,
+    ResultComponent,
   ],
   imports: [
     CommonModule,

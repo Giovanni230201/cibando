@@ -11,6 +11,7 @@ export class UserService {
 
   userRole = new ReplaySubject;
 
+
   constructor(private http: HttpClient) { }
 
   insertUser(user): Observable<any> {
@@ -21,4 +22,5 @@ export class UserService {
     const emailUtente = {'email' : email}
     return this.http.post<any>(`${this.apiBaseUrl}/user`, emailUtente)
   }
+
 }

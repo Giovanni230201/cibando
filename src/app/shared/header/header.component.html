@@ -14,7 +14,7 @@
         </li>
         <mat-icon class="align-self-center">restaurant_menu</mat-icon>
         <li class="nav-item">
-          <a class="nav-link" routerLink="recipes"> Ricette</a>
+          <a class="nav-link" routerLink="/recipes/recipes"> Ricette</a>
         </li>
         <mat-icon class="align-self-center">contacts</mat-icon>
         <li class="nav-item">
@@ -22,20 +22,27 @@
         </li>
         <mat-icon class="align-self-center">add</mat-icon>
         <li class="nav-item">
-          <a class="nav-link" routerLink="recipes/new-recipe"> Nuova Ricetta</a>
+          <a class="nav-link" routerLink="/recipes/new-recipes"> Nuova Ricetta</a>
         </li>
 
 
 
         <li class="nav-item user" *ngIf="!authService.isLogged()">
-          <a class="nav-link" routerLink="login"> <mat-icon class="align-self-center">person</mat-icon> Accedi</a>
+          <a class="nav-link" routerLink="/user/login"> <mat-icon class="align-self-center">person</mat-icon> Accedi</a>
         </li>
         <li class="nav-item user" *ngIf="authService.isLogged()">
           <mat-icon [ngClass]="authService.isLogged ? 'logged' : '' ">person</mat-icon><span class="name">Ciao {{user.name}}</span>
-          <a routerLink="profile"> -PROFILO</a>
+          <a routerLink="/user/profile"> -PROFILO</a>
           <a class="nav-link" (click)="logout()"> Esci</a>
         </li>
 
+        <li>
+          <input type="search" class="search-form" [(ngModel)]="ricerca" (keyup.enter)="risultato()">
+          <button routerLink="cerca" class="search"  (click)="risultato()">
+            <mat-icon >search</mat-icon>
+              </button>
+
+        </li>
 
       </ul>
     </div>

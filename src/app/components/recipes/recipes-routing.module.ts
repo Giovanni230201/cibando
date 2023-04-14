@@ -6,15 +6,15 @@ import { RecipesComponent } from './recipes.component';
 import { RecipesListComponent } from './recipes-list/recipes-list.component';
 import { DetailComponent } from './detail/detail.component';
 import { NewRecipeComponent } from '../new-recipe/new-recipe.component';
+import { ResultComponent } from './result/result.component';
 
 const routes: Routes =[
-{path:'', component: RecipesComponent, children:[
-    {path:'recipes', component: RecipesListComponent},
+  {path:'',component: RecipesComponent,children: [
     {path:'dettaglio/:title/:_id', component: DetailComponent},
-    {path:'new-recipe', component: NewRecipeComponent, canActivate: [LoggedInGuard]},
-    {path:'', pathMatch: 'full', component:RecipesListComponent}
-
- ]}
+    {path:'new-recipes', component: NewRecipeComponent, canActivate:[LoggedInGuard]},
+    {path:'cerca/:text', component: ResultComponent},
+    {path:'recipes',pathMatch:'full', component: RecipesListComponent },
+  ]}
 ];
 
 @NgModule({

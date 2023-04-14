@@ -19,9 +19,8 @@
           <span [innerHTML]="recipe.description | slice: 0:250"></span>
         </p>
         <a routerLink="dettaglio/{{recipe.title}}/{{recipe._id}}" class="btn btn-primary" *ngIf="!pag">Visualizza</a>
-        <a routerLink="/ricette/dettaglio/{{recipe.title}}/{{recipe._id}}" class="btn btn-primary"*ngIf="pag">Dettaglio</a>
-        <a class="btn btn-primary delete" *ngIf="ruolo === 'admin' ">Elimina</a>
-
+        <a routerLink="/recipes/dettaglio/{{recipe.title}}/{{recipe._id}}" class="btn btn-primary"*ngIf="pag">Dettaglio</a>
+        <a class="btn btn-primary delete" *ngIf="ruolo ==='admin' "  >Elimina</a>
       </div>
     </div>
   </div>

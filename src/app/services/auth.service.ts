@@ -22,7 +22,7 @@ export class AuthService {
     const user= {
       name: res.name,
       email: res.email,
-      password: res.password,
+      password: res.password
     }
 
     this.userService.userRole.next(res.role);
@@ -37,5 +37,6 @@ export class AuthService {
     localStorage.removeItem('user');
     this.userService.userRole.next('');
   }
+
 
 }

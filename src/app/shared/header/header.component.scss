@@ -5,6 +5,7 @@
   width: 20px;
   font-size: 21px;
   color: white;
+  margin-top: 6px;
   }
 
 .icona-cibando {
@@ -15,6 +16,13 @@
 .nav-item{
   margin-right: 10px;
   margin-top: 11px;
+}
+
+.search{
+  width: max-content;
+  height: max-content;
+  background-color: transparent;
+  border: none;
 }
 
 // .user{
@@ -44,4 +52,11 @@ li.nav-item.user{
     a.nav-link{
       display: inline-block;
     }
+}
+
+.search{
+  width: max-content;
+  height: max-content;
+  background-color: transparent;
+  border: none;
 }

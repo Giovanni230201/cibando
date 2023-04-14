@@ -28,12 +28,47 @@ export class RecipeCardComponent implements OnInit, OnDestroy {
   ruolo: any;
   loading=true;
 
+  // recipes$ = this.recipeService.getRecipes().pipe(
+  // //  map(response => response.filter(ricetteFiltrate => ricetteFiltrate.difficulty < 3)),
+  //   map(res => {
+  //     this.ricette = res;
+  //     if(res){
+  //       this.messageService.add({severity:'success', summary:'', detail:'Ricetta caricata correttamente'})
+  //     }
+  //   }),
+  // );
+
+  ricercato: any;
+
+
   recipes$ = this.recipeService.getRecipes().pipe(
-  //  map(response => response.filter(ricetteFiltrate => ricetteFiltrate.difficulty < 3)),
-    map(res => {
-      this.ricette = res;
-      if(res){
-        this.messageService.add({severity:'success', summary:'', detail:'Ricetta caricata correttamente'})
+    map(response => {
+      if(this.pag === 'ricerca') {
+        this.recipeService.testoCercato.subscribe({
+          next: (res) => {
+            this.ricercato = res;
+             if(this.ricercato) {
+          this.recipeService.findRecipes(this.ricercato).subscribe({
+            next: (res) => {
+              this.ricette = res;
+              console.log(res);
+            },
+            error: (err) => {
+              console.log(err);
+            }
+          })
+        }
+          },
+          error: (err) => {
+            console.error(err);
+          }
+        });
+
+      } else {
+        this.ricette = response;
+        if(response) {
+          this.messageService.add({severity: 'success', summary:'Completato', detail: 'Ricette caricate correttamente', life: 3000})
+        }
       }
     }),
   );
@@ -50,17 +85,25 @@ export class RecipeCardComponent implements OnInit, OnDestroy {
     private router: Router
     ){}
 
-  ngOnInit(): void {
-    if(JSON.parse(localStorage.getItem('user')) != null) {
-      this.userService.userRole.subscribe({
-        next: (res) => {
-          this.ruolo = res;
-        },
-        error: (err) => {
-          console.log(err);
-        }
-      })
-    }
+
+//   ngOnInit(): void {
+//      if(JSON.parse(localStorage.getItem('user')) != null) {
+//       this.userService.userRole.subscribe({
+//         next: (res) => {
+//           this.ruolo = res;
+//         },
+//         error: (err) => {
+//           console.log(err);
+//         }
+//       })
+//     }
+// }
+
+ngOnInit(): void {
+  if(JSON.parse(localStorage.getItem('user')) != null){
+    const user=JSON.parse(localStorage.getItem('user'));
+    this.onGetUser(user.email)
+  }
 }
 
 ngOnDestroy(): void {
@@ -95,6 +138,17 @@ ngOnDestroy(): void {
     event.page = event.page + 1;
     this.page = event.page;
   }
+
+ onGetUser(email): void{
+  this.userService.getUser(email).pipe(take(1))
+  .subscribe({
+    next: res =>{
+      this.ruolo=res.role;
+    },
+    error: err => console.log(err)
+  })
+ }
+
 
 
 }
